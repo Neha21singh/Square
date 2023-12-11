@@ -1,0 +1,10 @@
+.git
+.github
+.pytest_cache
+__pycache__
+penv
+.env
+init.bat
+run.bat
+test.bat
+webrun.bat

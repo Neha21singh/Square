@@ -1,0 +1,85 @@
+{% extends "static/pages/_common/base.htm" %}
+
+{% block body %}
+<div id='x-main' class="container-full mt-5 p-3">
+<div class="container-md">
+
+	<div class="row">
+	<div class="col-12 p-2">
+		<h3 class="float-start ps-2">NSP DETAILS</h3>
+		<button type="button" class="btn btn-primary float-end mx-2" data-nav='todo.project.new'><i class="bi bi-plus-square"></i></button>	
+        <select id="BLOCKS" class="form-select float-end mx-2" style="width:160px" onchange="filter_BLOCKS(this.value.trim())" required>
+          <option value="any" selected>Any</option>
+		  <option value="Beginner">Beginner</option>
+		  <option value="Intermediate">Intermediate</option>
+		  <option value="Advanced">Advanced</option>
+		</select>
+		<select id="SECTORS" class="form-select float-end mx-2" style="width:160px;" onchange="filter_SECTORS(this.value.trim())" required>
+			<option value="any" selected>Any</option>
+			<option value="CSharp">CSharp</option>
+			<option value="Javascript">Javascript</option>
+			<option value="Java">Java</option>
+			<option value="Python">Python</option>
+			<option value="PHP">PHP</option>
+		</select>
+		
+	</div>
+	</div>
+	
+	<div id='x-challenges'>
+		<table class="table" id="tbl_ch">
+		<thead class="table-dark">
+		<tr>
+			  <th scope="col">SECTORS</th>
+			  <th scope="col">BLOCKS</th>
+			  <th scope="col">ADDRESS</th>
+			  <th scope="col">PLOT.MT</th>
+			  <th scope="col">SQ.FT.</th>
+			  <th scope="col">PER.FLOOR</th>
+			  <th scope="col">FLOOR</th>
+			  <th scope="col">CONT.PERSON</th>
+			  <th scope="col">CONT.NO</th>
+		      <th scope="col">AVAILABLE.AREA</th>
+			  <th scope="col">DEMAND</th>
+			  <th scope="col">SALE/RENT</th>
+	          <th scope="col">TYPE</th>
+		      <th scope="col">AVAILABLE.OR.NOT</th>
+			  <th scope="col">DATE</th>
+			  <th scope="col">REMARK</th>
+			  <th scope="col" class="text-center">Action</th>
+	    </tr>
+		</thead>
+		<tbody>
+		  {% for item in projects %}
+			<tr>
+			  <td class="col-2">{{item.SECTORS}}</td>
+			  <td class="col-2">{{item.BLOCKS}}</td>
+			  <td class="col-2">{{item.ADDRESS}}</td>
+			  <td class="col-2">{{item.PLOTSINMT}}</td>
+			  <td class="col-2">{{item.TAINSQFT}}</td>
+			  <td class="col-2">{{item. A_PER_FLOOR}}</td>
+			  <td class="col-2">{{item. FLOOR}}</td>
+			  <td class="col-2">{{item.CONT_PERSON}}</td>
+			  <td class="col-2">{{item.CONT_NO}}</td>
+			  <td class="col-2">{{item.AVAILABLE_AREA_IN_SQ_FT}}</td>
+			  <td class="col-2">{{item.DEMAND}}</td>
+			  <td class="col-2">{{item.SALE_RENT_SU}}</td>
+			  <td class="col-2">{{item.TYPE}}</td>
+			  <td class="col-2">{{item.AVAILABLE_OR_NOT}}</td>
+			  <td class="col-2">{{item. DATE}}</td>
+			  <td class="col-2">{{item.REMARK}}</td>
+			  <td class="col-2">
+				<button type="button" class="btn btn-primary float-end mx-2" data-do="todo.project.del/{{item._id}}"><i class="bi bi-trash"></i></button>		  
+				<button type="button" class="btn btn-primary float-end mx-2" data-nav='todo.project.edit/{{item._id}}'><i class="bi bi-pencil-square"></i></button>
+			  </td>
+			</tr>
+		  {% endfor %}
+		  </tbody>
+		</table>
+	</div>
+
+	
+	</div>
+</div>	
+</div>
+{% endblock %}
