@@ -1,7 +1,3 @@
-//$("#project_form").submit(function (event) {
-//	postForm($(this), $("#action").attr('formaction'));	
-//    event.preventDefault();
-//});
 alert('hy');
 session_info={}
 session_info.page={}
