@@ -8,8 +8,8 @@
 {% if _id|length %}
 <div class="col-12 p-2">
 	<h3 class="float-start">EDIT</h3>
-	<button type="button" class="btn btn-primary float-end mx-2" data-nav='todo.projects'>Cancel</button>		
-	<button id="action" type="submit" class="btn btn-primary float-end mx-2" data-do="todo.project.save/{{_id}}" data-form="project_form">Update</button>		
+	<div type="button" class="btn btn-primary float-end mx-2" data-nav='todo.projects'>Cancel</div>		
+	<div id="action" type="submit" class="btn btn-primary float-end mx-2" data-do="todo.project.save/{{_id}}" data-form="project_form">Update</div>		
 </div>
 {% else %}
 <div class="col-12 p-2">

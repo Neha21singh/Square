@@ -9,10 +9,13 @@
 		<h3 class="float-start ps-2">NSP DETAILS</h3>
 		<button type="button" class="btn btn-outline-primary float-end mx-2" onclick="addproject();"><i class="bi bi-plus-lg"></i>Add</button>
 	<div class="float-end px-2">
-	  <!-- <label for="exampleFormControlInput1">Organization</label> -->
 	  <input type="hidden" id="txtBLOCKS" class="form-control" placeholder="B" value="{{BLOCKS}}" name="BLOCKS">
-	  <select id="BLOCKS" class="form-select"  onchange="setproject(this)">
-	  	  <!-- <option value="">All</option> -->
+	  <select id="BLOCKS" class="form-select"  onchange="setblock(this)">
+	  </select>   		
+     </div>
+	<div class="float-end px-2">
+	  <input type="hidden" id="txtSECTORS" class="form-control" placeholder="S" value="{{SECTORS}}" name="SECTORS">
+	  <select id="SECTORS" class="form-select"  onchange="setsec(this)">
 	  </select>   		
      </div>
 	</div>
